@@ -1,7 +1,7 @@
 .navbar.bg-base-100.shadow-sm 
   .flex-none
-    = render 'shared/dropdown_menu'
+    = render 'shared/navigation'
   .flex-1.mx-2
     %p= 'EventLoop'
   .flex-none
-    = render 'shared/dropdown_profile'
+    = render 'shared/dropdown_profile' if current_user.present? 

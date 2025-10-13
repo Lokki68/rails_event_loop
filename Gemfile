@@ -15,6 +15,8 @@ gem "tailwindcss-rails"
 
 gem "haml-rails"
 gem "html2haml", group: :development
+gem "simple_form"
+gem "view_component"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -58,3 +60,5 @@ end
 gem "tailwindcss-ruby", "~> 4.1"
 
 gem "devise", "~> 4.9"
+
+gem "turbo-rails", "~> 2.0"

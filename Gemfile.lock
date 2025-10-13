@@ -302,6 +302,9 @@ GEM
       sexp_processor (~> 4.16)
     securerandom (0.4.1)
     sexp_processor (4.17.4)
+    simple_form (5.3.1)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     solid_cable (3.0.12)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -344,6 +347,9 @@ GEM
     tilt (2.6.1)
     timeout (0.4.3)
     tsort (0.2.0)
+    turbo-rails (2.0.17)
+      actionpack (>= 7.1.0)
+      railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
@@ -351,6 +357,9 @@ GEM
     unicode-emoji (4.1.0)
     uri (1.0.4)
     useragent (0.16.11)
+    view_component (4.0.2)
+      activesupport (>= 7.1.0, < 8.1)
+      concurrent-ruby (~> 1)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -389,13 +398,16 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.3)
   rubocop-rails-omakase
+  simple_form
   solid_cable
   solid_cache
   solid_queue
   tailwindcss-rails
   tailwindcss-ruby (~> 4.1)
   thruster
+  turbo-rails (~> 2.0)
   tzinfo-data
+  view_component
   web-console
 
 BUNDLED WITH

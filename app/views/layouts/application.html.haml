@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title= content_for(:title) || "Rails Event Loop"
+    %title= content_for(:title) || "Event Loop"
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
     %meta{:content => "yes", :name => "mobile-web-app-capable"}/
@@ -13,8 +13,10 @@
     %link{:href => "/icon.svg", :rel => "icon", :type => "image/svg+xml"}/
     %link{:href => "/icon.png", :rel => "apple-touch-icon"}/
     = stylesheet_link_tag :app
-    = javascript_importmap_tags
-  %body
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module", defer: true
+  %body.min-h-screen
+    = turbo_frame_tag :modal_form
     = render 'shared/navbar'
-    %main.container.mx-auto.mt-28.px-5.flex.flex-col
-      = yield
+    .w-full
+      .p-4.sm:px10.sm:py-6
+        = yield

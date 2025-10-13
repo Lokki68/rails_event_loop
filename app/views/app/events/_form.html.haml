@@ -1,0 +1,8 @@
+.flex.flex-col.mb-4
+  .flex.gap-2
+    = form.input :title
+    = form.input :description
+  = form.input :date, html5: true
+
+.flex.justify-end
+  = form.submit 'Enregistrer', class: 'btn btn-soft btn-primary'
