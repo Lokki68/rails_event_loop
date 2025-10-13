@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module App
-  class EventsController < ApplicationController
+  class EventsController < AppController
     before_action :find_event, only: %i[ show ]
 
     def index

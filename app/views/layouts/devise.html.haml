@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= content_for(:title) || "Event Loop"
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "yes", :name => "mobile-web-app-capable"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = yield :head
+    %link{:href => "/icon.png", :rel => "icon", :type => "image/png"}/
+    %link{:href => "/icon.svg", :rel => "icon", :type => "image/svg+xml"}/
+    %link{:href => "/icon.png", :rel => "apple-touch-icon"}/
+    = stylesheet_link_tag :app
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module", defer: true
+  %body.min-h-screen
+    .container.flex.mx-auto.relative.flex-col.items-center.justify-center.md:grid.lg:max-w-none.lg:grid-cols-10.lg:px-0.min-h-screen
+      .relative.hidden.bg-dark.col-span-4.h-full.flex-col.bg-muted.p-10.text-white.dark:border-r.lg:flex
+        = image_tag 'background_picture.jpg', alt: 'Login Background', class: 'absolute inset-0 h-full w-full object-cover'
+      .lg:p-8.col-span-6
+        = yield
