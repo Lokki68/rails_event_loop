@@ -4,5 +4,5 @@
   %li
     %a Item 1
   %li.border-t-1.border-secondary.mt-6
-    = link_to 'Se déconnecter', destroy_user_session_path, method: :delete
+    = link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}
  
