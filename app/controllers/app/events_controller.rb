@@ -12,10 +12,13 @@ module App
 
     def new
       @event = Event.new
+      console
     end
 
     def create
       @event = Event.new(event_params)
+      @event.created_by = current_user
+      debugger
 
       if @event.save
         redirect_to app_event_path(@event)
@@ -31,7 +34,7 @@ module App
     end
 
     def event_params
-      params.expect(Event => [ :title, :description, :date, :created_by ])
+      params.expect(event: [ :title, :description, :date ])
     end
   end
 end

@@ -1,0 +1,11 @@
+fr:
+  activerecoord:
+    models:
+      event:
+        one: Evènement
+        other: Evènements
+    attributes:
+      event:
+        title: Titre
+        description: Description
+        date: Date
