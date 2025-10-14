@@ -53,10 +53,10 @@ SimpleForm.setup do |config|
 
     ## Inputs
     # b.use :input, class: 'input', error_class: 'is-invalid', valid_class: 'is-valid'
-    b.use :error, wrap_with: { tag: :span, class: "ms-auto mb-3 inline-flex items-center gap-x-1.5 px-3 rounded-lg text-xs font-medium input-error" }
     b.wrapper tag: :div, class: "flex flex-col" do |component|
-      component.use :label
-      component.use :input, class: "px-4 py-2 shadow-sm"
+      component.use :label, error_class: "text-error"
+      component.use :input, class: "px-4 py-2 shadow-sm rounded-sm ", error_class: "border border-error"
+      component.use :error, wrap_with: { tag: :span, class: "ms-auto mt-3 inline-flex items-center gap-x-1.5 px-3 rounded-lg text-xs font-medium input-error text-error" }
     end
 
 

@@ -14,7 +14,7 @@ export default class extends Controller {
   static targets = ["address", "map", "latitude", "longitude"];
 
   connect() {
-    console.log("🗺️ Stimulus map controller connecté");
+    // console.log("🗺️ Stimulus map controller connecté");
 
     this.map = L.map(this.mapTarget).setView([48.8566, 2.3522], 13);
 
@@ -30,7 +30,7 @@ export default class extends Controller {
     const query = this.addressTarget.value.trim();
     if (!query) return;
 
-    console.log("Recherche :", query);
+    // console.log("Recherche :", query);
 
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
       query
@@ -41,7 +41,7 @@ export default class extends Controller {
     if (results.length === 0) return alert("Adresse introuvable");
 
     const { lat, lon, display_name } = results[0];
-    console.log(`✅ Trouvé : ${display_name}`);
+    // console.log(`✅ Trouvé : ${display_name}`);
 
     this.map.setView([lat, lon], 14);
     this.marker.setLatLng([lat, lon]);

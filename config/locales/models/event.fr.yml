@@ -1,5 +1,5 @@
 fr:
-  activerecoord:
+  activerecord:
     models:
       event:
         one: Evènement
@@ -9,3 +9,16 @@ fr:
         title: Titre
         description: Description
         date: Date
+        address: Adresse
+    errors:
+      models:
+        event:
+          attributes:
+            title:
+              blank: Titre requis
+            description:
+              blank: Description requise
+            date:
+              blank: Date requise
+            address:
+              blank: Adresse requise
