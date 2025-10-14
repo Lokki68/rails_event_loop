@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@hotwired/turbo-rails':
+        specifier: ^8.0.18
+        version: 8.0.18
     devDependencies:
       autoprefixer:
         specifier: ^10.4.21
@@ -22,6 +26,16 @@ importers:
         version: 4.1.14
 
 packages:
+
+  '@hotwired/turbo-rails@8.0.18':
+    resolution: {integrity: sha512-iRxd922VSTVH0NzlLDx9T9S8Ep0NPnrLCKva31WIMLNApJgUZKa/a90EFiBa2G6Do+x4xuKZk53dlweiwTyXkQ==}
+
+  '@hotwired/turbo@8.0.18':
+    resolution: {integrity: sha512-dG0N7khQsP8sujclodQE3DYkI4Lq7uKA04fhT0DCC/DwMgn4T4WM3aji6EC6+iCfABQeJncY0SraXqVeOq0vvQ==}
+    engines: {node: '>= 18'}
+
+  '@rails/actioncable@8.0.300':
+    resolution: {integrity: sha512-X+jxLnyYciTciEeM9crFFsR6DCodCsnoQIzv4hEST6Lx1rEBEjNQbBopnyDT4gr7lBeHJNfb6fEcvZuWFxUSQg==}
 
   autoprefixer@10.4.21:
     resolution: {integrity: sha512-O+A6LWV5LDHSJD3LjHYoNi4VLsj/Whi7k6zG12xTYaU4cQ8oxQGckXNX8cRHK5yOZ/ppVHe0ZBXGzSV9jXdVbQ==}
@@ -91,6 +105,15 @@ packages:
       browserslist: '>= 4.21.0'
 
 snapshots:
+
+  '@hotwired/turbo-rails@8.0.18':
+    dependencies:
+      '@hotwired/turbo': 8.0.18
+      '@rails/actioncable': 8.0.300
+
+  '@hotwired/turbo@8.0.18': {}
+
+  '@rails/actioncable@8.0.300': {}
 
   autoprefixer@10.4.21(postcss@8.5.6):
     dependencies:
