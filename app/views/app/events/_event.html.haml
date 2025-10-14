@@ -1,0 +1,7 @@
+%tr
+  %td= event.title
+  %td= event.description
+  %td= l(event.date)
+  %td.flex.justify-end.gap-2
+    = render LinkIconComponent.new(icon: 'eye', href: app_event_path(event))
+    = render LinkIconComponent.new(icon: 'square-pen', href: edit_app_event_path(event))

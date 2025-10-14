@@ -3,3 +3,13 @@
   .card-title.flex.justify-between
     %h2= 'Event'
     = link_to 'Ajouter', new_app_event_path, class: 'btn btn-outline btn-primary'
+  .card-body.overflow-x-auto
+    %table.table.table-zebra
+      %thead
+        %tr
+          %th= 'Title'
+          %th= 'Description'
+          %th= 'Date'
+          %th= 'Actions'
+      %tbody
+        = render partial: 'event', collection: @events

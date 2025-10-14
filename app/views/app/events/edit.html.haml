@@ -1,0 +1,6 @@
+.card.shadow.p-4
+  .card-title.flex.justify-between
+    %h2= "Modifier #{@event.title}"
+  .card-body
+    = simple_form_for @event, url: app_event_path(@event) do |form|
+      = render partial: 'form', locals: {form: form}

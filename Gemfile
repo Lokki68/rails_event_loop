@@ -64,3 +64,5 @@ gem "tailwindcss-ruby", "~> 4.1"
 gem "devise", "~> 4.9"
 
 gem "turbo-rails", "~> 2.0"
+
+gem "lucide-rails", "~> 0.7.1"

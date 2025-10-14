@@ -18,6 +18,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_13_074045) do
     t.string "title"
     t.string "description"
     t.date "date"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "created_by_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
