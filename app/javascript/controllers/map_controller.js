@@ -15,15 +15,17 @@ export default class extends Controller {
 
   connect() {
     // console.log("🗺️ Stimulus map controller connecté");
+    const latitude = this.latitudeTarget.value || 48.8566;
+    const longitude = this.longitudeTarget.value || 2.3522;
 
-    this.map = L.map(this.mapTarget).setView([48.8566, 2.3522], 13);
+    this.map = L.map(this.mapTarget).setView([latitude, longitude], 13);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: "© OpenStreetMap contributors",
     }).addTo(this.map);
 
-    this.marker = L.marker([48.8566, 2.3522]).addTo(this.map);
+    this.marker = L.marker([latitude, longitude]).addTo(this.map);
   }
 
   async search() {
