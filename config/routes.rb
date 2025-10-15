@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   namespace :app do
     resources :events
+    resources :contacts do
+      member do
+        post :add_contact
+        delete :remove_contact
+      end
+    end
   end
 
   root "dashboard#index"

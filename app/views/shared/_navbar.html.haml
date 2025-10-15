@@ -1,7 +1,8 @@
-.navbar.bg-base-100.shadow-sm 
+.navbar.bg-base-100.shadow-sm.overflow-hidden.h-16
   .flex-none
     = render 'shared/navigation'
   .flex-1.mx-2
-    %p= 'EventLoop'
+    = image_tag 'event_loop.png', style: 'height: 90px'
   .flex-none
-    = render 'shared/profile_navigation' if current_user.present? 
+    = link_to 'Se connecter', new_user_session_path, class: 'btn btn-soft btn-secondary' if current_user.nil?
+    = render 'shared/profile_navigation' if current_user.present?  

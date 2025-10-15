@@ -1,0 +1,7 @@
+%tr
+  %td= user.username
+  %td= user.email
+  %td
+  %td.flex.justify-end.gap-2
+    = button_to add_contact_app_contact_path(user), method: :post, class: 'btn btn-circle' do
+      = lucide_icon 'circle-plus'

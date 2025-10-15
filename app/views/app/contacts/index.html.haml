@@ -1,0 +1,30 @@
+.card.shadow.p-4.gap-4
+  .card.shadow.p-4
+    .card-title.flex.justify-between
+      %h2= 'Contacts'
+    .card-body.overflow-x-auto
+      %table.table.table-zebra
+        %thead
+          %tr
+            %th= 'userame'
+            %th= 'email'
+            %th= 'Actions'
+        %tbody
+          = render partial: 'contact', collection: @contacts
+  
+  .card.shadow.p-4.mt-8
+    .card-title.flex.justify-between
+      %h2= 'Recherche'
+
+  .card.shadow.p-4
+    .card-title.flex.justify-between
+      %h2= 'Utilisateurs'
+    .card-body.overflow-x-auto
+      %table.table.table-zebra
+        %thead
+          %tr
+            %th= 'userame'
+            %th= 'email'
+            %th= 'Actions'
+        %tbody
+          = render partial: 'user', collection: @users
