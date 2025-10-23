@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 # ----------------------------------------
 # ⚙️ Framework principal
-gem "rails", "~> 8.0.3"
+gem "rails", "~> 8.1.0"
 
 # ----------------------------------------
 # 🗄️ Base de données
