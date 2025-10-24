@@ -1,0 +1,7 @@
+fr:
+  activerecord:
+    values:
+      contact:
+        accepted: "Accepté"
+        refused: "Refusé"
+        waited: "En Attente"

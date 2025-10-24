@@ -1,7 +1,7 @@
 %tr
-  %td= contact.username
-  %td= contact.email
-  %td
+  %td= contact.contact.username
+  %td= contact.contact.email
+  %td= render ContactStatusComponent.new(status: contact.accepted, text: t(contact.accepted))
   %td.flex.justify-end.gap-2
-    = button_to remove_contact_app_contact_path(contact), method: :delete, class: 'btn btn-circle' do
-      = lucide_icon 'circle-minus'
+    = button_to remove_contact_app_contact_path(contact.contact), method: :delete, class: 'btn btn-circle btn-error' do
+      = lucide_icon('circle-minus', stroke: 'white')

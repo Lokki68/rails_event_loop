@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       member do
         post :add_contact
         delete :remove_contact
+        get :accept
+        get :reject
       end
     end
   end

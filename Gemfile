@@ -10,6 +10,7 @@ gem "rails", "~> 8.0.3"
 gem "pg", "~> 1.1"
 gem "ransack", "~> 4.2"
 gem "pagy", "~> 9.0"
+gem "state_machines-activerecord", "~> 0.9.0"
 
 # ----------------------------------------
 # 🚀 Serveur & Performance

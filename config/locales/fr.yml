@@ -28,6 +28,9 @@
 #       enabled: "ON"
 
 fr:
+  accepted: "Accepté"
+  rejected: "Refusé"
+  waited: "En Attente"
   date:
     abbr_day_names:
       - dim
