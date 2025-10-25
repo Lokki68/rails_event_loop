@@ -14,9 +14,18 @@
         %tbody
           = render partial: 'contact', collection: @contacts
   
-  .card.shadow-lg.rounded-lg.p-4.mt-8
+  .card.shadow-lg.rounded-lg.p-4.mt-8{data: { controller: 'reveal' } }
     .card-title.flex.justify-between
       %h2= 'Recherche'
+      = lucide_icon 'chevron-down', data: { action: 'click->reveal#toggle', reveal_target: 'button' }, class: 'cursor-pointer'
+    .card-body{ data: { reveal_target: 'item' }, class: 'hidden' }
+      = simple_form_for @q, url: app_contacts_path, method: :get do |f|
+        .grid.grid-cols-2.gap-2.mx-4.w-full
+          = f.input :username_cont, label: 'Username'
+          = f.input :email_cont, label: 'Email'
+        .flex.gap-2.justify-end 
+          = link_to 'Réinitialiser', app_contacts_path, class: 'btn btn-secondary mt-4'
+          = f.button :submit, 'Rechercher', class: 'btn btn-primary mt-4'
 
   .card.shadow-lg.rounded-lg.p-4
     .card-title.flex.justify-between
