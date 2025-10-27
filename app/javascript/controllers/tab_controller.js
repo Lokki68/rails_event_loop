@@ -5,7 +5,7 @@ export default class extends Controller {
 
   connect() {
     console.log("tabController =>", this.tabTargets);
-    if (!this.tabTargets.some((tab) => tab.classList.contains("tab-active"))) {
+    if (!this.tabTargets.some((tab) => tab.classList.contains("btn-active"))) {
       this.activate(this.tabTargets[0]);
     }
   }
@@ -18,10 +18,10 @@ export default class extends Controller {
   activate(tab) {
     const selected = tab.dataset.tab;
 
-    this.tabTargets.forEach((t) => t.classList.remove("tab-active"));
+    this.tabTargets.forEach((t) => t.classList.remove("btn-active"));
     this.panelTargets.forEach((p) => p.classList.add("hidden"));
 
-    tab.classList.add("tab-active");
+    tab.classList.add("btn-active");
 
     const panel = this.panelTargets.find((p) => p.dataset.tab === selected);
 

@@ -4,9 +4,9 @@
 
 .flex.flex-col 
   = content
-  .tabs-lift{data: {controller: 'tabs'}}
+  %div.gap-4{data: {controller: 'tabs'}}
     - @layout[:tabs].each_with_index do |tab, index|
-      %button.tab.capitalize{class: index == 0 ? 'tab-active' : '', data: {action: "click->tabs#switch", tab: index, tabs_target: 'tab'}}
+      %button.btn{class: index == 0 ? 'btn-active' : '', data: {action: "click->tabs#switch", tab: index, tabs_target: 'tab'}}
         = tab
 
     -panels.each_with_index do |panel, index|
