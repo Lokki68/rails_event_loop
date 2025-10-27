@@ -1,16 +1,6 @@
-.card.shadow-lg.rounded-lg.p-6
-  .card-title.flex.justify-between.items-center
-    %h2= @event.title
-    %p.text-sm= l(@event.date)
-
-  .card-body 
-    .rounded-lg.overflow-hidden
-      = render MapDisplayComponent.new(latitude: @event.latitude, longitude: @event.longitude)
-    %hr.my-2
-
-    .flex.flex-col
-      %p= @event.description
-
-      .flex.flex-col
-        %h2.font-semibold.mt-4 Invités
+= render PageComponent.new(record: @record, layout: @layout) do |page|
+  - page.with_panel do
+    = render "description"
+  - page.with_panel do
+    = render "participants"
 

@@ -8,3 +8,6 @@ application.register("map-display", MapDisplayController);
 
 import RevealController from "./reveal_controller";
 application.register("reveal", RevealController);
+
+import TabController from "./tab_controller";
+application.register("tabs", TabController);

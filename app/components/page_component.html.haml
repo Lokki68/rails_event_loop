@@ -1,0 +1,18 @@
+- if @layout[:title]
+  .text-2xl.font-bold.mb-4
+    = @record.public_send(@layout[:title])
+
+.flex.flex-col 
+  = content
+  .tabs-lift{data: {controller: 'tabs'}}
+    - @layout[:tabs].each_with_index do |tab, index|
+      %button.tab.capitalize{class: index == 0 ? 'tab-active' : '', data: {action: "click->tabs#switch", tab: index, tabs_target: 'tab'}}
+        = tab
+
+    -panels.each_with_index do |panel, index|
+      %div{ class: index != 0 ? 'hidden' : '',  data: { tab: index, tabs_target: "panel" }}
+        = panel  
+        
+      
+      
+        

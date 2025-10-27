@@ -8,7 +8,10 @@ module App
       @events = Event.all
     end
 
-    def show; end
+    def show
+      @record = @event
+      @layout = @event.page_layout
+    end
 
     def new
       @event = Event.new

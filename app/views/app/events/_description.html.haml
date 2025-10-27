@@ -1,0 +1,12 @@
+.card.shadow-lg.rounded-lg.p-6
+  .card-title.flex.justify-between.items-center
+    %h2 Description
+    %p.text-sm= l(@event.date)
+
+  .card-body 
+    .rounded-lg.overflow-hidden
+      = render MapDisplayComponent.new(latitude: @event.latitude, longitude: @event.longitude)
+    %hr.my-2
+
+    .flex.flex-col
+      %p= @event.description
