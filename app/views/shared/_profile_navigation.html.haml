@@ -2,7 +2,7 @@
   Profile
 %ul#popover-1.dropdown.dropdown-end.menu.w-52.rounded-box.bg-base-100.shadow-sm{:popover => "", :style => "position-anchor:--anchor-1"}
   %li
-    %a Item 1
+    = link_to 'Modifier Utilisateur', edit_user_registration_path
   %li.border-t-1.border-secondary.mt-6
     = link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}
  

@@ -6,7 +6,7 @@
     - when :info then "alert-info"
     - when :warning then "alert-warning"
     - else "alert"
-  .alert.alert-soft.flex.items-center.justify-between.absolute.bottom-0.left-0.right-0{class: alert_class, role: 'alert'}
+  .alert.alert-soft.flex.items-center.justify-between.absolute.bottom-0.left-0.right-0.z-100{class: alert_class, role: 'alert'}
     .flex-1
       = message
     = button_tag type: "button", class: "btn btn-sm btn-circle btn-ghost", onclick: "this.parentElement.remove()" do

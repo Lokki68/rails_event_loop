@@ -24,6 +24,7 @@ module App
       @event.created_by = current_user
 
       if @event.save
+        flash[:notice] = "Evenement : #{@event.title}, créé avec succès."
         redirect_to app_event_path(@event)
       else
         render :new, status: :unprocessable_entity
@@ -32,6 +33,7 @@ module App
 
     def update
       if @event.update(event_params)
+        flash[:notice] = "Evenement : #{@event.title}, modifié avec succès."
         redirect_to app_event_path(@event)
       else
         render :edit, status: :unprocessable_entity
