@@ -1,16 +1,17 @@
-.flex.flex-col.mb-7.gap-4{ data: { controller: "map" } }
-  = form.input :title
-  = form.input :description
-  = form.input :date, html5: true
-  = form.input :address, input_html: { data: { map_target: 'address', action: "blur->map#search"}}
+= render InnerModalComponent.new(reset: !form.object.persisted? && new_polymorphic_path([@crud_model_class])) do |modal|
+  .flex.flex-col.mb-7.gap-4{ data: { controller: "map" } }
+    = form.input :title
+    = form.input :description
+    = form.input :date, html5: true
+    = form.input :address, input_html: { data: { map_target: 'address', action: "blur->map#search"}}
 
-  = form.input :latitude, as: :hidden,
-    input_html: { data: { map_target: "latitude" } }
+    = form.input :latitude, as: :hidden,
+      input_html: { data: { map_target: "latitude" } }
 
-  = form.input :longitude, as: :hidden,
-    input_html: { data: { map_target: "longitude" } }
+    = form.input :longitude, as: :hidden,
+      input_html: { data: { map_target: "longitude" } }
 
-  .map-container.mt-4{ data: { map_target: "map" }, style: "height: 300px; width: 100%" }
+    .map-container.mt-4{ data: { map_target: "map" }, style: "height: 300px; width: 100%" }
 
-.flex.justify-end
-  = form.submit 'Enregistrer', class: 'btn btn-soft btn-primary'
+  .flex.justify-end
+    = form.submit 'Enregistrer', class: 'btn btn-soft btn-primary'

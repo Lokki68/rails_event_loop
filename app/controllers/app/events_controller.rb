@@ -15,6 +15,7 @@ module App
 
     def new
       @event = Event.new
+      render CreateUpdateModalComponent.new(record: @event, url: app_new_event_path)
     end
 
     def edit; end

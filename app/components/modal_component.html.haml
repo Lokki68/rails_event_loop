@@ -1,0 +1,15 @@
+.hs-overlay.size-full.fixed.top-0.start-0.overflow-x-hidden.overflow-y-auto.pointer-events-none{:id => @id, "aria-labelledby" => @id, class: "z-[80] bg-[#2A2D44]/50", role: "dialog", tabindex: "-1"}
+  .sm:max-w-5xl.sm:w-full.m-3.sm:mx-auto.flex.items-center{class: "min-h-[calc(100%-3.5rem)]"}
+    .w-full.flex.flex-col.bg-white.rounded-xl.pointer-events-auto
+      .flex.justify-between.items-center.py-6.px-12.border-b.border-brand-light-grey
+        .flex.items-center
+          - if icon?
+            .h-12.w-12.rounded-2xl.bg-brand-purple.flex.items-center.justify-center.mr-6
+              = icon
+          %h2#create-form-modal-label.font-medium.text-2xl
+            = title
+        %button.size-8.inline-flex.justify-center.items-center.gap-x-2.rounded-full.focus:outline-none.hover:opacity-50.disabled:opacity-50.disabled:pointer-events-none{"aria-label" => "Close", "data-hs-overlay" => @id, type: "button", onclick: "document.getElementById('#{@id}').remove()"}
+          %span.sr-only Fermer
+          = helpers.lucide_icon 'x'
+      #modal_form_body.mt-8.relative.pb-14.px-12
+        = body

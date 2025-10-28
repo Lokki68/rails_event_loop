@@ -1,0 +1,41 @@
+- if @modal
+  - if @record.valid?
+    = helpers.turbo_stream.hide_modal_form if params[:close]
+    = helpers.turbo_stream.turbo_flash text: @success_flash || "#{@record.label} #{@record.class.gender? ? 'créé' : 'créée'}", klass: "success"
+    -if @tabs.present?
+      - @tabs.each do |tab, part|
+        = helpers.turbo_stream.replace "#{tab}_tab" do
+          = render partial: part
+    - else
+      = helpers.turbo_stream.append(@record.model_name.plural) do
+        - if @records.present?
+          = render partial: @record.model_name.singular, collection: @records
+        - else
+          = render partial: (@partial || @record.model_name.singular), locals: { (@partial || @record.model_name.singular).to_sym => @record }
+
+      - if @record.is_a? Customer
+        = helpers.turbo_stream.turbo_frame_set_src(:modal_form, edit_customer_path(@record, particular: @particular)) unless params[:close]
+      - else
+        = helpers.turbo_stream.turbo_frame_set_src(:modal_form, url_for([:edit, @record])) unless params[:close]
+  - else
+    = helpers.turbo_stream.update :modal_form_body do
+      = helpers.simple_form_for @record, url: @url || url_for([:app, @record.class]), method: :post do |form|
+        = render partial: 'form', locals: { form: form }
+- else
+  - if @record.valid?
+    = helpers.turbo_stream.turbo_flash text: @success_flash || "#{@record.label} #{@record.class.gender? ? 'mis' : 'mise'} à jour ", klass: 'success'
+  - else
+    = helpers.turbo_stream.turbo_flash text: "#{@record.label} comporte des erreurs", klass: "error"
+  = helpers.turbo_stream.update :navbar_title do
+    = @record.label
+  - if @layout&.key?(:title)
+    = helpers.turbo_stream.replace :title do
+      = render Show::TitleComponent.new(record: @record, field: @layout[:title])
+  - if @layout&.key?(:left)
+    = helpers.turbo_stream.replace :left do
+      = render Show::LeftComponent.new(record: @record, layout: @layout[:left])
+  = helpers.turbo_stream.replace :edit_form do
+    = render partial: 'edit_form' rescue nil
+  - @tabs.each do |tab, part|
+    = helpers.turbo_stream.replace "#{tab}_tab" do
+      = render partial: part
