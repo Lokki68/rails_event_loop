@@ -4,9 +4,12 @@ module App
     before_action :set_contact, only: %i[accept reject]
 
     def index
+      @contact_requests = Contact.where(contact: current_user, accepted: "waited")
       @contacts = current_user.contacts
       @q = User.ransack(params[:q])
       @users = @q.result.where.not(id: current_user.id)
+
+      console
     end
 
 
@@ -60,7 +63,7 @@ module App
       contact&.destroy
       inverse&.destroy
 
-      flash[:info] = contact_user.username.present? ? "#{contact_user.usename} a été retiré de vos contacts." : "Ce contact n'existe pas dans votre liste."
+      flash[:info] = contact_user.username.present? ? "#{contact_user.username} a été retiré de vos contacts." : "Ce contact n'existe pas dans votre liste."
       redirect_back fallback_location: app_contacts_path
     end
 

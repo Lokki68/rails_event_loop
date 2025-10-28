@@ -1,4 +1,18 @@
 .card.shadow-lg.rounded-lg.p-6
+  - if @contact_requests.any?
+    .card.shadow-lg.rounded-lg.p-4
+      .card-title.flex.justify-between
+        %h2= 'Demandes de contact'
+      .card-body.overflow-x-auto
+        %table.table.table-zebra
+          %thead
+            %tr
+              %th= 'userame'
+              %th= 'email'
+              %th= 'status'
+              %th= 'Actions'
+          %tbody
+            = render partial: 'contact_request', collection: @contact_requests
 
   .card.shadow-lg.rounded-lg.p-4
     .card-title.flex.justify-between

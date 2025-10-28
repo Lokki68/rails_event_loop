@@ -1,0 +1,9 @@
+%tr
+  %td= contact_request.user.username
+  %td= contact_request.user.email
+  %td= render ContactStatusComponent.new(status: contact_request.accepted, text: t(contact_request.accepted))
+  %td.flex.justify-end.gap-2
+    = button_to accept_app_contact_path(contact_request), method: :get, class: 'btn btn-circle btn-soft btn-success' do
+      = lucide_icon('circle-check')
+    = button_to reject_app_contact_path(contact_request), method: :get, class: 'btn btn-circle btn-soft btn-error' do
+      = lucide_icon('circle-x')
