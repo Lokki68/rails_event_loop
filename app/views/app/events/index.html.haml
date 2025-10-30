@@ -2,7 +2,7 @@
 .card.shadow-lg.rounded-lg.p-6
   .card-title.flex.justify-between
     %h2= 'Evenements'
-    = link_to 'Ajouter', new_app_event_path, class: 'btn btn-outline btn-primary'
+    = link_to 'Ajouter', new_app_event_path, class: 'btn btn-outline btn-primary', data: { turbo_frame: 'modal_form' }
   .card-body.overflow-x-auto
     %table.table.table-zebra
       %thead

@@ -45,5 +45,7 @@ module RailsEventLoop
     end
 
     config.view_component.capture_compatibility_patch_enabled = true
+
+    config.active_record.use_yaml_unsafe_load = true
   end
 end

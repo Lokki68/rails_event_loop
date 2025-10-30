@@ -1,3 +1,4 @@
+- p "Render Create Update Component"
 = helpers.turbo_frame_tag :modal_form do
   = render ModalComponent.new do |modal|
     - if @icon
@@ -5,5 +6,5 @@
         = render partial: "icons/#{@icon}", locals: { width: 28, height: 28, fill: '#576BEF' }
     - modal.with_title { @title.present? ? @title : "#{@record.persisted? ? 'Modifier' : 'Ajouter'} #{helpers.indefinite_article(@record.class)} #{@record.model_name.human }" }
     - modal.with_body do  
-      = helpers.simple_form_for @record, url: @url || url_for([:app, @record.persisted? ? @record : @record.class]), method: (@record.persisted? ? :patch : :post), data: @data do |f|
+      = helpers.simple_form_for @record, url: @url, method: (@record.persisted? ? :patch : :post), data: @data do |f|
         = render partial: 'form', locals: { form: f }

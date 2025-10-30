@@ -1,5 +1,10 @@
 fr:
   activerecord:
+    models:
+      contact:
+        one: Contact
+        other: Contacts
+        gender: m
     values:
       contact:
         accepted: "Accepté"

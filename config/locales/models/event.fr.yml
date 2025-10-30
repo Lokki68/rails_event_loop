@@ -4,6 +4,7 @@ fr:
       event:
         one: Evènement
         other: Evènements
+        gender: m
     attributes:
       event:
         title: Titre

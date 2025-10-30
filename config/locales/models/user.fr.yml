@@ -4,6 +4,7 @@ fr:
       user:
         one: Utilisateur
         other: Utilisateurs
+        gender: m
     attributes:
       user:
         username: Surnom

@@ -1,4 +1,4 @@
-- columns.length == 2
+- if columns.length == 2
   .grid.grid-cols-12 
     %div{class: "col-span-12 md:col-span-6 pb-6 md:pb-0 md:pr-8 border-b md:border-b-0 md:border-r border-gray-200" }
       %h3.text-xl.font-medium.mb-6= headers[0] if headers[0]
@@ -13,5 +13,6 @@
   - if footer?
     = footer
   - else
-    = render ResetButtonComponent.new(href: app_events_path)
+    = render ResetButtonComponent.new(href: @reset) if @reset
+    = render SaveButtonComponent.new(label: @submit_label)
     

@@ -15,7 +15,7 @@ module App
 
     def new
       @event = Event.new
-      render CreateUpdateModalComponent.new(record: @event, url: app_new_event_path)
+      render CreateUpdateModalComponent.new(record: @event, url: new_app_event_path)
     end
 
     def edit; end
@@ -23,13 +23,8 @@ module App
     def create
       @event = Event.new(event_params)
       @event.created_by = current_user
-
-      if @event.save
-        flash[:notice] = "Evenement : #{@event.title}, créé avec succès."
-        redirect_to app_event_path(@event)
-      else
-        render :new, status: :unprocessable_entity
-      end
+      @event.save
+      render CreateStreamComponent.new(record: @event)
     end
 
     def update
